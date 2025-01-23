@@ -42,7 +42,7 @@ class SupportResistance:
         st.pyplot(plt)
 
 # Streamlit app layout
-st.title("Financial Data Viewer")
+st.title("Visor de Datos Financieros")
 
 # Layout for inputs using columns
 col1, col2, col3, col4 = st.columns(4)
