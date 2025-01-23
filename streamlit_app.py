@@ -49,18 +49,18 @@ col1, col2, col3, col4 = st.columns(4)
 
 with col1:
     # User input for ticker selection
-    ticker = st.text_input("Enter ticker", "AAPL")
+    ticker = st.text_input("ticker", "AAPL")
 
 with col2:
     # User input for date range
-    start_date = st.date_input("Start date", datetime.date.today() - datetime.timedelta(days=365))
+    start_date = st.date_input("fecha comienzo", datetime.date.today() - datetime.timedelta(days=365))
 
 with col3:
-    end_date = st.date_input("End date", datetime.date.today())
+    end_date = st.date_input("fecha fin", datetime.date.today())
 
 with col4:
     # Button to show the chart
-    show_chart = st.button("Show Chart")
+    show_chart = st.button("mostrar gráfico")
 
 if show_chart:
     sr = SupportResistance(ticker, start_date, end_date)
@@ -68,4 +68,4 @@ if show_chart:
     if not df.empty:
         sr.plot_data(df)
     else:
-        st.write("No data available for the selected ticker.")
+        st.write("No hay datos para ese ticker.")
